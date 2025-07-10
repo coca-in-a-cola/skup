@@ -1,0 +1,59 @@
+<html>
+
+<head>
+  <title>Калькулятор скупа</title>
+  <link rel="stylesheet" href="index.css" />
+  <script src="/item/item.js" defer type="module"></script>
+  <script src="index.js" defer type="module"></script>
+</head>
+
+<body>
+  <table class="skup-table">
+    <thead class="skup-table__header">
+      <tr>
+        <th>Предмет</th>
+        <th>Цена</th>
+        <th>Количество</th>
+        <th>Сумма</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr is="skup-item"></tr>
+      <tr is="skup-item"></tr>
+      <tr is="skup-item"></tr>
+      <tr is="skup-item"></tr>
+    </tbody>
+
+    <tfoot class="skup-table__footer">
+      <td colspan="2"><button skup-reset-all class="skup-reset">Сбросить всё</button></td>
+
+      <td class="skup-footer-title">
+        <span>Итого:</span>
+      </td>
+
+      <td>
+        <span id="total" class="skup-footer-title" skup-total>0</span>
+      </td>
+    </tfoot>
+  </table>
+
+  <template id="skup-item-template" class="item">
+    <link rel="stylesheet" href="item/item.css" />
+    <td>
+      <input class="item-input" placeholder="Предмет" tabindex="1">
+    </td>
+    <td>
+      <input class="item-input" type="number" placeholder="Цена" name="item-price" item-price tabindex="2">
+    </td>
+    <td>
+      <input class="item-input" type="number" placeholder="Количество" name="item-quantity" item-quantity tabindex="3">
+    </td>
+
+    <td class="item-sum">
+      <span item-sum>0</span>
+    </td>
+  </template>
+</body>
+
+</html>
